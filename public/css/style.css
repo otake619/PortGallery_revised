@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+* {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* navbarの表示の切替 */
+@media screen and (min-width: 545px){
+    .navbar {
+        display: none;
+    }
+
+    .header-link {
+        display: ruby;
+    }
+}
+
+@media screen and (max-width: 544px){
+    .header-link {
+        display: none;
+    }
+
+    .navbar {
+        display: ruby;
+    }
+}
