@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('portgallery.front');
+    return view('portgallery.work_post');
 });
 
 Auth::routes();

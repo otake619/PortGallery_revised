@@ -1,17 +1,74 @@
+/* 共通設定 */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 * {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-/* navbarの表示の切替 */
+/* 共通設定 */
+/* frontの設定 */
 @media screen and (min-width: 545px){
     .navbar {
         display: none;
     }
 
     .header-link {
-        display: ruby;
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        height: 50px;
+        background-color: #bbdefb;
     }
+
+    .header-link a {
+        margin-top: 10px;
+        color: white;
+        font-size: 20px;
+        text-shadow: 
+            1px  1px 0px #003366,
+            -1px  1px 0px #003366,
+            1px -1px 0px #003366,
+            -1px -1px 0px #003366,
+            1px  0px 0px #003366,
+            0px  1px 0px #003366,
+            -1px  0px 0px #003366,
+            0px -1px 0px #003366;        /* 文字の影 */
+    }
+
+    .header-link a::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: blue;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header-link a:hover {
+        cursor: pointer;
+    }
+
+    .header-link a:hover::after {
+        width: 100%;
+    }
+
+    .brand {
+        font-size: 20px;
+        padding-top: 10px;
+        font-weight: bold;
+    }
+
+    .image img {
+        width: 40vw;
+        margin-top: 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    }
+
+    .introduction {
+        margin-top: 100px;
+    }
+
 }
 
 @media screen and (max-width: 544px){
@@ -22,4 +79,24 @@
     .navbar {
         display: ruby;
     }
+
+    .navbar-brand a {
+        font-size: 20px;
+    }
+
+    .image img {
+        width: 400px;
+        margin-top: 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    }
+
+    .introduction {
+        margin-top: 40px;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }

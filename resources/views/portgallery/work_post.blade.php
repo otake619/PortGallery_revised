@@ -33,10 +33,10 @@
                                     <a class="nav-link" href="#">お知らせ<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/login">ログイン</a>
+                                    <a class="nav-link" href="/login">ログアウト</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/register">新規登録</a>
+                                    <a class="nav-link" href="/register">タイムライン</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">使い方</a>
@@ -52,8 +52,8 @@
                     <div class="header-link">
                         <p class="brand" href="#">PortGallery</p>
                         <a href="">お知らせ</a>
-                        <a href="/login">ログイン</a>
-                        <a href="/register">新規登録</a>
+                        <a href="/logout">ログアウト</a>
+                        <a href="/register">タイムライン</a>
                         <a href="">使い方</a>
                     </div>
                 </div>
@@ -62,30 +62,31 @@
     </div>
     <div class="container-fluid">
         <div class="row no-gutters">
+            <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <div class="image text-center">
-                    <img src="./image/intro1.jpg" alt="フロントの写真">
-                </div>
+                <form action="/portfolio/post" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <h3 class="text-center mt-3">ポートフォリオ情報をアップロード</h3>
+                    <div class="form-group">
+                        <label for="name">サイト名</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="※30文字以内" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="url">アドレス</label>
+                        <input type="url" class="form-control" name="url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">サムネイル画像</label>
+                        <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="text">紹介文</label>
+                        <textarea class="form-control" name="text" id="text" cols="10" rows="10" placeholder="※150文字以内" required></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-outline-secondary btn-block" value="登録">
+                </form>
             </div>
-            <div class="col-sm-6">
-                <div class="introduction text-center">
-                    <h3>PortGalleryへようこそ！</h3>
-                    <p>PortGalleryは、自身のポートフォリオを<br>
-                    投稿したり、他のアカウントのポートフォリオを<br>
-                    閲覧することが出来るWebサービスです。<br>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row no-gutters">
-            <div class="col-12">
-                <div class="footer text-center">
-                    <h3>PortGallery</h3>
-                    <small>&copy; 2020 Otake619</small>
-                </div>
-            </div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
     <!-- JS, Popper.js, and jQuery -->
